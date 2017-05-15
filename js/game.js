@@ -3,8 +3,6 @@ var Game = function(gameString = makeGameString()) {
   this.gameNest = this.makeNested();
 }
 
-
-
 function makeGameString() {
   var allZeros = "0000000000000000".split("");
   for(var i = 0; i < 2; i++) {
@@ -82,17 +80,9 @@ Game.prototype.placeRandomTwo = function() {
   this.gameNest[twoIndexX].splice(twoIndexY, 1, "2");
 }
 
-
-
-
 Array.prototype.diff = function(a) {
     return this.filter(function(i) {return a.indexOf(i) < 0;});
 };
-
-
-
-
-
 
 function nestedToString(nested) {
   string = [].concat.apply([], nested).join("")
@@ -137,7 +127,6 @@ function moveNumbers(nested){
   }
   return newNested
 }
-
 
 function combineLikeValues(newNested){
   for(var i = 0; i < newNested.length; i++){
