@@ -1,0 +1,16 @@
+.board {
+  width: 60%;
+  margin: 0 auto;
+}
+.square {
+  background: #f9f4e5;
+  float: left;
+  height:12vw;
+  margin: 1%;
+  width: 23%;
+}
+p {
+  text-align: center;
+  font-size: 30pt;
+  color: black;
+}
