@@ -24,7 +24,7 @@ $(document).ready(function() {
 });
 
 function placeGame(game){
-  var nested = game.makeNested();
+  var nested = game.gameNest;
   for(var i = 0; i < nested.length; i++){
     for(var j = 0; j < nested[i].length; j++){
       $(".row-"+i+" .column-"+j).append("<p>"+nested[i][j]+"</p>").hide().fadeIn(10)

@@ -1,5 +1,6 @@
 var Game = function(gameString = makeGameString()) {
   this.gameString = gameString;
+  this.gameNest = this.makeNested();
 }
 
 
@@ -7,12 +8,12 @@ var Game = function(gameString = makeGameString()) {
 function makeGameString() {
   var allZeros = "0000000000000000".split("");
   for(var i = 0; i < 2; i++) {
-    twoIndex = getRandomTwoIndex();
+    twoIndex = getRandomTwoIndexforString();
     if(allZeros[twoIndex] == "0"){
       allZeros.splice(twoIndex, 1, "2");
     } else {
       while (allZeros[twoIndex] != "0"){
-        twoIndex = getRandomTwoIndex();
+        twoIndex = getRandomTwoIndexforString();
       }
       allZeros.splice(twoIndex, 1, "2");
     }
@@ -42,39 +43,43 @@ Game.prototype.makeNested = function() {
 
 Game.prototype.move = function(direction) {
   if(direction == 'right') {
-    var nested = this.makeNested();
+    var nested = this.gameNest;
   } else if (direction == 'left') {
-    var nested = reverseRows(this.makeNested());
+    var nested = reverseRows(this.gameNest);
   } else if(direction == 'down') {
-    var nested = transpose(this.makeNested());
+    var nested = transpose(this.gameNest);
   } else if(direction == 'up'){
-    var transposed = transpose(this.makeNested());
+    var transposed = transpose(this.gameNest);
     var nested = reverseRows(transposed);
   }
   var newNested = moveNumbers(nested);
   var combinedNested = combineLikeValues(newNested);
   if(direction == 'right') {
+    this.gameNest = combinedNested
     this.gameString = nestedToString(combinedNested);
   } else if (direction == 'left'){
+    this.gameNest = reverseRows(combinedNested);
     this.gameString = nestedToString(reverseRows(combinedNested));
   } else if (direction == 'down'){
+    this.gameNest = transpose(combinedNested)
     this.gameString = nestedToString(transpose(combinedNested));
   } else if (direction == 'up'){
     var reversed = reverseRows(combinedNested);
+    this.gameNest = transpose(reversed)
     this.gameString = nestedToString(transpose(reversed));
   }
   this.placeRandomTwo();
-  return this.gameString
+  return this.gameNest
 }
 
 Game.prototype.placeRandomTwo = function() {
-  var gameArr = this.gameString.split("");
-  var twoIndex = getRandomTwoIndex();
-  while (gameArr[twoIndex] != "0") {
-    twoIndex = getRandomTwoIndex();
+  var twoIndexY = getRandomTwoIndexforArr();
+  var twoIndexX = getRandomTwoIndexforArr();
+  while (this.gameNest[twoIndexX][twoIndexY] != "0") {
+    var twoIndexX = getRandomTwoIndexforArr();
+    var twoIndexY = getRandomTwoIndexforArr();
   }
-  gameArr.splice(twoIndex, 1, "2");
-  this.gameString = gameArr.join("")
+  this.gameNest[twoIndexX].splice(twoIndexY, 1, "2");
 }
 
 
@@ -139,7 +144,7 @@ function combineLikeValues(newNested){
     for(var j = (newNested[i].length - 1); j > 0 ; j--){
       if ((newNested[i][j] != 0) && (newNested[i][j] == newNested[i][j-1])) {
         var num = parseInt(newNested[i][j]);
-        newNested[i][j] = 2 * num
+        newNested[i][j] = "" + (2 * num)
         newNested[i].splice(j-1, 1)
         newNested[i].unshift("0")
       }
@@ -148,8 +153,12 @@ function combineLikeValues(newNested){
   return newNested
 }
 
-function getRandomTwoIndex(){
+function getRandomTwoIndexforString(){
   return twoIndex = Math.floor(Math.random() * 16);
+}
+
+function getRandomTwoIndexforArr(){
+  return twoIndex = Math.floor(Math.random() * 3);
 }
 
 
