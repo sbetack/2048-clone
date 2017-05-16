@@ -2,7 +2,7 @@ $(document).ready(function() {
   game = new Game();
   placeGame(game)
   $("body").keydown(function(e){
-    var code = e.keyCode || e.which;
+    var code = e.keyCode;
     if (code == 37) {
       console.log("left")
       game.move("left")
@@ -27,7 +27,9 @@ function placeGame(game){
   var nested = game.gameNest;
   for(var i = 0; i < nested.length; i++){
     for(var j = 0; j < nested[i].length; j++){
-      $(".row-"+i+" .column-"+j).append("<p>"+nested[i][j]+"</p>").hide().fadeIn(10)
+      if (nested[i][j] != 0) {
+        $(".row-"+i+" .column-"+j).append("<p>"+nested[i][j]+"</p>").hide().fadeIn(10)
+      }
     }
   }
 }

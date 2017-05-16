@@ -54,17 +54,17 @@ Game.prototype.move = function(direction) {
   var combinedNested = combineLikeValues(newNested);
   if(direction == 'right') {
     this.gameNest = combinedNested
-    this.gameString = nestedToString(combinedNested);
+    // this.gameString = nestedToString(combinedNested);
   } else if (direction == 'left'){
     this.gameNest = reverseRows(combinedNested);
-    this.gameString = nestedToString(reverseRows(combinedNested));
+    // this.gameString = nestedToString(reverseRows(combinedNested));
   } else if (direction == 'down'){
     this.gameNest = transpose(combinedNested)
-    this.gameString = nestedToString(transpose(combinedNested));
+    // this.gameString = nestedToString(transpose(combinedNested));
   } else if (direction == 'up'){
     var reversed = reverseRows(combinedNested);
     this.gameNest = transpose(reversed)
-    this.gameString = nestedToString(transpose(reversed));
+    // this.gameString = nestedToString(transpose(reversed));
   }
   this.placeRandomTwo();
   return this.gameNest
