@@ -13,40 +13,43 @@
   <link rel="stylesheet" href="css/application.css">
 
   <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Rancho" rel="stylesheet">
   <script src="js/mousetrap.js"></script>
   <script src="js/underscore.js"></script>
   <script src="js/game.js"></script>
   <script src="js/application.js"></script>
 
-  <title>256!</title>
+  <title>2048!</title>
 </head>
 <body>
-  <h1>PLAY 256!</h1>
+  <div class="left-box"><strong>P <br> L <br> A <br>Y <br><br><br><br> 2048</strong></div>
   <div class="board">
     <section class="row-0">
-      <div class="square column-0"></div>
-      <div class="square column-1"></div>
-      <div class="square column-2"></div>
-      <div class="square column-3"></div>
+      <div class="square column-0"><div class="overlay"></div></div>
+      <div class="square column-1"><div class="overlay"></div></div>
+      <div class="square column-2"><div class="overlay"></div></div>
+      <div class="square column-3"><div class="overlay"></div></div>
     </section>
     <section class="row-1">
-      <div class="square column-0"></div>
-      <div class="square column-1"></div>
-      <div class="square column-2"></div>
-      <div class="square column-3"></div>
+      <div class="square column-0"><div class="overlay"></div></div>
+      <div class="square column-1"><div class="overlay"></div></div>
+      <div class="square column-2"><div class="overlay"></div></div>
+      <div class="square column-3"><div class="overlay"></div></div>
     </section>
     <section class="row-2">
-      <div class="square column-0"></div>
-      <div class="square column-1"></div>
-      <div class="square column-2"></div>
-      <div class="square column-3"></div>
+      <div class="square column-0"><div class="overlay"></div></div>
+      <div class="square column-1"><div class="overlay"></div></div>
+      <div class="square column-2"><div class="overlay"></div></div>
+      <div class="square column-3"><div class="overlay"></div></div>
     </section>
     <section class="row-3">
-      <div class="square column-0"></div>
-      <div class="square column-1"></div>
-      <div class="square column-2"></div>
-      <div class="square column-3"></div>
+      <div class="square column-0"><div class="overlay"></div></div>
+      <div class="square column-1"><div class="overlay"></div></div>
+      <div class="square column-2"><div class="overlay"></div></div>
+      <div class="square column-3"><div class="overlay"></div></div>
     </section>
   </div>
+  <div class="right-box"> <strong>DIRECTIONS:</strong><br><br><div id="directions">Use the arrow keys to combine the numbers to get to 2048!</div></div>
 </body>
 </html>

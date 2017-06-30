@@ -1,16 +1,60 @@
+body {
+  font-family: 'Rancho', cursive;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2vw;
+  color: #a3551b;
+}
 .board {
   width: 60%;
   margin: 0 auto;
+  overflow: hidden;
+  display: inline-block;
+
 }
 .square {
-  background: #f9f4e5;
+  background-color: 
+rgba(179, 195, 221, .3)
+;
   float: left;
-  height:12vw;
+  height:10vw;
+  width: 10vw;
   margin: 1%;
   width: 23%;
 }
+
 p {
   text-align: center;
-  font-size: 30pt;
-  color: black;
+  font-size: 6vw;
+  color: #3b4c68;
+  margin: 0;
+  z-index: 1;
+  padding-top: 1vw;
+}
+
+.overlay {
+  margin: 0px;
+  padding: 0px;
+}
+.left-box {
+  width: 19vw;
+  display: inline-block;
+  vertical-align: top;
+  text-align: center;
+  font-size: 4vw;
+  margin-top: 10px;
+  color: #3b4c68;
+}
+.right-box {
+  width: 19vw;
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 10px;
+  font-size: 3vw;
+  color: #5c6a7c;
+}
+#directions {
+  font-size: 2vw;
 }
