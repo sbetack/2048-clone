@@ -1,5 +1,7 @@
 body {
   font-family: 'Montserrat', sans-serif;
+  background-color: rgba(255, 183, 89, .1);
+  margin-top: 12vh;
 }
 
 h1 {
@@ -43,7 +45,7 @@ p {
 .overlay {
   margin: 0px;
   padding: 0px;
-  /*-webkit-animation-duration: 1s;*/
+
 }
 .left-box {
   font-family: 'Emblema One', cursive;
@@ -51,18 +53,27 @@ p {
   display: inline-block;
   vertical-align: top;
   text-align: center;
-  font-size: 5vw;
-  margin-top: 10px;
-  color: #3b4c68;
+  font-size: 6vw;
+  color: #ffb759;
+  -webkit-text-stroke: 1px #3b4c68;
 }
 .right-box {
   font-family: 'Emblema One', cursive;
   width: 14vw;
   display: inline-block;
   vertical-align: top;
-  margin-top: 10px;
+  text-align: center;
+  /*margin-top: 5vh;*/
   font-size: 2.3vw;
-  color: #5c6a7c;
+  color: #76879e;
+  /*#5c6a7c;*/
+  /*#76879e;*/
+
+  /*#5c6a7c;*/
+  -webkit-text-stroke: .03em #495463;
+  /*black;*/
+  /*#76879e;*/
+  /**/
 }
 #directions {
   font-size: 1.8vw;
