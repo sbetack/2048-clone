@@ -1,5 +1,5 @@
 body {
-  font-family: 'Rancho', cursive;
+  font-family: 'Montserrat', sans-serif;
 }
 
 h1 {
@@ -8,10 +8,11 @@ h1 {
   color: #a3551b;
 }
 .board {
-  width: 60%;
+  width: 63%;
   margin: 0 auto;
   overflow: hidden;
   display: inline-block;
+  /*border: 1px solid black;*/
 
 }
 .square {
@@ -19,42 +20,50 @@ h1 {
 rgba(179, 195, 221, .3)
 ;
   float: left;
-  height:10vw;
+  height: 10vw;
   width: 10vw;
-  margin: 1%;
+  margin: .08em;
   width: 23%;
+  border: 3px solid #ffb759;
 }
 
 p {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
   text-align: center;
   font-size: 6vw;
   color: #3b4c68;
   margin: 0;
   z-index: 1;
   padding-top: 1vw;
+  text-shadow: 3px 3px 2px #ffb759;
+  -webkit-animation-duration: 10s;
 }
 
 .overlay {
   margin: 0px;
   padding: 0px;
+  /*-webkit-animation-duration: 1s;*/
 }
 .left-box {
+  font-family: 'Emblema One', cursive;
   width: 19vw;
   display: inline-block;
   vertical-align: top;
   text-align: center;
-  font-size: 4vw;
+  font-size: 5vw;
   margin-top: 10px;
   color: #3b4c68;
 }
 .right-box {
-  width: 19vw;
+  font-family: 'Emblema One', cursive;
+  width: 14vw;
   display: inline-block;
   vertical-align: top;
   margin-top: 10px;
-  font-size: 3vw;
+  font-size: 2.3vw;
   color: #5c6a7c;
 }
 #directions {
-  font-size: 2vw;
+  font-size: 1.8vw;
 }
